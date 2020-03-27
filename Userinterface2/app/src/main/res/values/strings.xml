@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">UserInterface2</string>
+    <string name="hint_edit_text">Ingrese nombre</string>
+
+</resources>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navgraph"
+    app:startDestination="@id/listFragment">
+
+    <fragment
+        android:id="@+id/listFragment"
+        android:name="com.manadigital.recyclerview1.fragments.listFragment"
+        android:label="list_fragment"
+        tools:layout="@layout/list_fragment">
+        <action
+            android:id="@+id/action_listFragment_to_newItem"
+            app:destination="@id/newItem" />
+        <argument
+            android:name="newItem"
+            app:argType="com.manadigital.recyclerview1.entities.Mascota[]"
+            app:nullable="true"
+            android:defaultValue="@null" />
+    </fragment>
+    <fragment
+        android:id="@+id/newItem"
+        android:name="com.manadigital.recyclerview1.fragments.NewItem"
+        android:label="new_item_fragment"
+        tools:layout="@layout/new_item_fragment" >
+        <action
+            android:id="@+id/action_newItem_to_listFragment"
+            app:destination="@id/listFragment" />
+        <argument
+            android:name="listMascotas"
+            app:argType="com.manadigital.recyclerview1.entities.Mascota[]"
+            app:nullable="true" />
+    </fragment>
+</navigation>
