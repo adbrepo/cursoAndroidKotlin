@@ -27,7 +27,7 @@ class MainActivity : AppCompatActivity() {
         btnAccept.setOnClickListener {
 
             if (edtInput.length()>0){
-                txtCartel.text = "Texto ingresado: " +edtInput.text
+                txtCartel.text = "Texto ingresado: " + edtInput.text
             }
             else{
                 Snackbar.make(root_layout, "Campo de datos vacio", Snackbar.LENGTH_SHORT).show()

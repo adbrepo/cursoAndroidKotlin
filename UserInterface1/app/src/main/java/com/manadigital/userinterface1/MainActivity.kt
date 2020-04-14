@@ -21,8 +21,10 @@ class MainActivity : AppCompatActivity() {
 
         btnChangeText.setOnClickListener {
             txtLabel.text = "texto cambiado"
-
+            
         }
+
+
 
 
     }

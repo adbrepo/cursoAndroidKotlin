@@ -33,6 +33,4 @@ class Mascota (nombre : String, tipo : String , raza : String, edad :Int) {
     }
 
 
-
-
 }

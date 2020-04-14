@@ -31,6 +31,5 @@ class Fragment2 : Fragment() {
 
         val userName = Fragment2Args.fromBundle(arguments!!).userName
         Snackbar.make(v,userName,Snackbar.LENGTH_SHORT).show()
-
     }
 }
