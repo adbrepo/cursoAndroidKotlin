@@ -6,12 +6,12 @@
         android:id="@+id/action_add"
         android:icon="@drawable/add"
         android:title="add"
-        app:showAsAction="ifRoom" />
+        app:showAsAction="never" />
 
     <item
         android:id="@+id/action_fav"
         android:icon="@drawable/fav"
         android:title="fav"
-        app:showAsAction="ifRoom" />
+        app:showAsAction="never" />
 
 </menu>
