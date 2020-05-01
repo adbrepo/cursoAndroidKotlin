@@ -45,8 +45,7 @@ class containerFragment : Fragment() {
 
         viewPager.setAdapter(createCardAdapter())
        // viewPager.isUserInputEnabled = false
-        TabLayoutMediator(tabLayout, viewPager,
-            TabLayoutMediator.TabConfigurationStrategy { tab, position ->
+        TabLayoutMediator(tabLayout, viewPager, TabLayoutMediator.TabConfigurationStrategy { tab, position ->
                 when (position) {
                     0 -> tab.text = "Tab1"
                     1 -> tab.text = "Tab2"
@@ -54,15 +53,13 @@ class containerFragment : Fragment() {
                     else -> tab.text = "undefined"
                 }
             }).attach()
-
     }
 
     private fun createCardAdapter(): ViewPagerAdapter? {
         return ViewPagerAdapter(requireActivity())
     }
 
-    class ViewPagerAdapter(fragmentActivity: FragmentActivity) :
-        FragmentStateAdapter(fragmentActivity) {
+    class ViewPagerAdapter(fragmentActivity: FragmentActivity) : FragmentStateAdapter(fragmentActivity) {
         override fun createFragment(position: Int): Fragment {
 
             return when(position){
