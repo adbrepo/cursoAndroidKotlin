@@ -29,7 +29,8 @@ class Fragment2 : Fragment() {
     override fun onStart() {
         super.onStart()
 
-        val userName = Fragment2Args.fromBundle(arguments!!).userName
-        Snackbar.make(v,userName,Snackbar.LENGTH_SHORT).show()
+        var mascotaName  = Fragment2Args.fromBundle(requireArguments()).mascotaName
+        var cantidad = Fragment2Args.fromBundle(requireArguments()).cantidad
+        Snackbar.make(v,mascotaName,Snackbar.LENGTH_SHORT).show()
     }
 }

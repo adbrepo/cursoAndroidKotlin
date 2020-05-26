@@ -2,10 +2,12 @@ package com.manadigital.kotlinclasses.Entities
 
 class Mascota (nombre : String, tipo : String , raza : String, edad :Int) {
 
-   private var nombre : String
+    var nombre : String
     var tipo : String
     var raza : String
     var edad : Int
+
+
 
 
     class Constants {
@@ -22,15 +24,14 @@ class Mascota (nombre : String, tipo : String , raza : String, edad :Int) {
         this.edad = edad
     }
 
-    fun setNombre (nombre : String){
+    fun  CalcularEdad (edad : Int) : Int {
 
-        this.nombre = nombre
+        var edadnueva : Int
+        edadnueva = edad*7
+        return edadnueva
     }
 
-    fun getNombre () : String {
 
-        return(this.nombre)
-    }
 
 
 }

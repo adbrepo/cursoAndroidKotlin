@@ -19,10 +19,6 @@ import com.google.android.material.snackbar.Snackbar
 import com.utn.dialogexample.R
 import com.utn.dialogexample.fragments.MainViewModel
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
 
 
 class DialogFragment :  DialogFragment() {
@@ -71,9 +67,7 @@ class DialogFragment :  DialogFragment() {
                 mainViewModel.input.value = edtCode.text.toString()
                 dismiss()
             } else {
-                Snackbar.make(
-                    v, "campo vacio", Snackbar.LENGTH_SHORT
-                ).show()
+                Snackbar.make(v, "campo vacio", Snackbar.LENGTH_SHORT).show()
             }
         }
     }

@@ -19,4 +19,5 @@
         android:name="com.utn.dialogexample.dialogs.DialogFragment"
         android:label="DialogFragment"
         tools:layout="@layout/fragment_dialog"/>
+
 </navigation>

@@ -18,6 +18,9 @@ class Fragment1 : Fragment() {
 
     lateinit var v: View
     lateinit var btnGoToFragment2: Button
+    lateinit var valor : String
+
+
 
 
     override fun onCreateView(
@@ -35,11 +38,16 @@ class Fragment1 : Fragment() {
     override fun onStart() {
         super.onStart()
 
+
+
+
         btnGoToFragment2.setOnClickListener {
 
-            val action2 = Fragment1Directions.actionFragment1ToFragment2("hola")
-            v.findNavController().navigate(action2)
+            valor = "Mati"
 
+
+            val action = Fragment1Directions.actionFragment1ToFragment2(valor,20)
+            v.findNavController().navigate(action)
         }
     }
 }

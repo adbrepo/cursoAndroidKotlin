@@ -20,7 +20,10 @@
         android:label="fragment_fragment2"
         tools:layout="@layout/fragment_fragment2" >
         <argument
-            android:name="userName"
+            android:name="mascotaName"
             app:argType="string" />
+        <argument
+            android:name="cantidad"
+            app:argType="integer" />
     </fragment>
 </navigation>

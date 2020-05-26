@@ -9,6 +9,8 @@ class MainActivity : AppCompatActivity() {
 
     var mascotas : MutableList<Mascota> = ArrayList<Mascota>()
 
+    lateinit var cartel : String
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -22,11 +24,13 @@ class MainActivity : AppCompatActivity() {
 
 
         for (mascotaActual in mascotas){
-            Log.d("Main Activity",mascotaActual.getNombre()+" " + mascotaActual.tipo +" " + mascotaActual.raza+ " " + mascotaActual.edad+ "\n")
+
+            Log.d("Main Activity",mascotaActual.nombre+" " + mascotaActual.tipo +" " + mascotaActual.raza+ " "
+            +mascotaActual.edad+ "\n")
         }
 
-        mascotas[0].setNombre("NombreNuevo")
-        Log.d("Activity Main",mascotas[0].getNombre())
+        mascotas[0].nombre="NombreNuevo"
+        Log.d("Activity Main",mascotas[0].nombre)
 
     }
 }
