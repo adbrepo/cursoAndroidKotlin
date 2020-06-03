@@ -39,6 +39,7 @@ class mainFragment : Fragment() {
 
         val editor = sharedPref.edit()
         editor.putString("USER", "Ale")
+
         editor.apply()
 
         user = sharedPref.getString("USER","default")!!
