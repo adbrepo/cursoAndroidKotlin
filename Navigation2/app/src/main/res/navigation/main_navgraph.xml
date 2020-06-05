@@ -25,5 +25,11 @@
         <argument
             android:name="cantidad"
             app:argType="integer" />
+        <argument
+            android:name="listaMascotas"
+            app:argType="com.manadigital.kotlinclasses.Entities.Mascota[]" />
+        <argument
+            android:name="user"
+            app:argType="com.manadigital.navigation2.fragments.Entities.User" />
     </fragment>
 </navigation>
