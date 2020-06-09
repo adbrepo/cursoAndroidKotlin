@@ -46,7 +46,6 @@ class listFragment : Fragment() {
         v =  inflater.inflate(R.layout.list_fragment, container, false)
         btnAdd = v.findViewById(R.id.btn_add)
         recMascotas = v.findViewById(R.id.rec_mascotas)
-
         return v
     }
 
