@@ -10,7 +10,7 @@ import com.manadigital.recyclerview1.R
 import com.manadigital.recyclerview1.entities.Mascota
 
 
-class MascotaListAdapter (private var mascotasList: MutableList<Mascota>,val adapterOnClick : () -> Unit) : RecyclerView.Adapter<MascotaListAdapter.MascotaHolder>() {
+class MascotaListAdapter (private var mascotasList: MutableList<Mascota>) : RecyclerView.Adapter<MascotaListAdapter.MascotaHolder>() {
 
     companion object {
 
@@ -29,18 +29,17 @@ class MascotaListAdapter (private var mascotasList: MutableList<Mascota>,val ada
         return mascotasList.size
     }
 
-//    fun setData(newData: ArrayList<Mascota>) {
-//        this.mascotasList = newData
-//        this.notifyDataSetChanged()
-//    }
+    fun setData(newData: ArrayList<Mascota>) {
+        this.mascotasList = newData
+        this.notifyDataSetChanged()
+    }
 
     override fun onBindViewHolder(holder: MascotaHolder, position: Int) {
 
         holder.setName(mascotasList[position].nombre)
         holder.getCardLayout().setOnClickListener {
-            adapterOnClick()
+            //adapterOnClick()
         }
-
     }
 
     class MascotaHolder (v: View) : RecyclerView.ViewHolder(v){

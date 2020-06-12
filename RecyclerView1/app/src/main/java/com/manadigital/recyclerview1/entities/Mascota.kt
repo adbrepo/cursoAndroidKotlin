@@ -4,8 +4,7 @@ import android.os.Parcel
 import android.os.Parcelable
 
 
-class Mascota(nombre: String?, tipo: String?, raza: String?, edad: Int?, urlImage: String?) :
-    Parcelable {
+class Mascota(nombre: String?, tipo: String?, raza: String?, edad: Int?) {
     var nombre: String = ""
 
     var tipo: String = ""
@@ -31,29 +30,5 @@ class Mascota(nombre: String?, tipo: String?, raza: String?, edad: Int?, urlImag
         this.urlImage = urlImage!!
     }
 
-    constructor(source: Parcel) : this(
-        source.readString(),
-        source.readString(),
-        source.readString(),
-        source.readInt(),
-        source.readString()
-    )
 
-    override fun describeContents() = 0
-
-    override fun writeToParcel(dest: Parcel, flags: Int) = with(dest) {
-        writeString(nombre)
-        writeString(tipo)
-        writeString(raza)
-        writeInt(edad)
-        writeString(urlImage)
-    }
-
-    companion object {
-        @JvmField
-        val CREATOR: Parcelable.Creator<Mascota> = object : Parcelable.Creator<Mascota> {
-            override fun createFromParcel(source: Parcel): Mascota = Mascota(source)
-            override fun newArray(size: Int): Array<Mascota?> = arrayOfNulls(size)
-        }
-    }
 }

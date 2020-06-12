@@ -25,7 +25,7 @@ class listFragment : Fragment() {
 
     lateinit var recMascotas : RecyclerView
 
-    var listMascotas : MutableList<Mascota>? = null
+    var mascotas : MutableList<Mascota> = ArrayList<Mascota>()
 
     private lateinit var linearLayoutManager: LinearLayoutManager
     private lateinit var mascotasListAdapter: MascotaListAdapter
@@ -37,46 +37,38 @@ class listFragment : Fragment() {
         fun newInstance() = listFragment()
     }
 
-    private lateinit var viewModel: ListViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         v =  inflater.inflate(R.layout.list_fragment, container, false)
-        btnAdd = v.findViewById(R.id.btn_add)
         recMascotas = v.findViewById(R.id.rec_mascotas)
         return v
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProviders.of(this).get(ListViewModel::class.java)
         // TODO: Use the ViewModel
     }
 
     override fun onStart() {
         super.onStart()
 
-        btnAdd.setOnClickListener {
 
-            var action = listFragmentDirections.actionListFragmentToNewItem(listMascotas?.toTypedArray())
-            v.findNavController().navigate(action)
-        }
-
-        listMascotas =listFragmentArgs.fromBundle(arguments!!).newItem?.toMutableList()
-        if(listMascotas == null){
-            listMascotas = ArrayList<Mascota>()
-        }
-        Log.d("","")
+        mascotas.add(Mascota("Pedro",Mascota.Constants.typePerro,"Colie",3))
+        mascotas.add(Mascota("Rodolgo",Mascota.Constants.typePerro,"Fox Terrier",4))
+        mascotas.add(Mascota("Emilio",Mascota.Constants.typePerro,"Gran Danes",5))
+        mascotas.add(Mascota("Luis",Mascota.Constants.typeGato,"Siames",6))
+        mascotas.add(Mascota("Carlos",Mascota.Constants.typeGato,"Pardo",7))
+        mascotas.add(Mascota("David",Mascota.Constants.typeGato,"Arlequin",8))
 
         recMascotas.setHasFixedSize(true)
-
 
         linearLayoutManager = LinearLayoutManager(context)
         recMascotas.layoutManager = linearLayoutManager
 
-        mascotasListAdapter = MascotaListAdapter(listMascotas!!){onItemClick()}
+        mascotasListAdapter = MascotaListAdapter(mascotas!!)
         recMascotas.adapter = mascotasListAdapter
 
 
