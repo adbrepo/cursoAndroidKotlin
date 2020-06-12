@@ -21,8 +21,6 @@ class listFragment : Fragment() {
 
     lateinit var v: View
 
-    lateinit var btnAdd : FloatingActionButton
-
     lateinit var recMascotas : RecyclerView
 
     var mascotas : MutableList<Mascota> = ArrayList<Mascota>()
@@ -30,13 +28,9 @@ class listFragment : Fragment() {
     private lateinit var linearLayoutManager: LinearLayoutManager
     private lateinit var mascotasListAdapter: MascotaListAdapter
 
-
-
-
     companion object {
         fun newInstance() = listFragment()
     }
-
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -55,7 +49,6 @@ class listFragment : Fragment() {
     override fun onStart() {
         super.onStart()
 
-
         mascotas.add(Mascota("Pedro",Mascota.Constants.typePerro,"Colie",3))
         mascotas.add(Mascota("Rodolgo",Mascota.Constants.typePerro,"Fox Terrier",4))
         mascotas.add(Mascota("Emilio",Mascota.Constants.typePerro,"Gran Danes",5))
@@ -68,14 +61,16 @@ class listFragment : Fragment() {
         linearLayoutManager = LinearLayoutManager(context)
         recMascotas.layoutManager = linearLayoutManager
 
-        mascotasListAdapter = MascotaListAdapter(mascotas!!)
+      //  mascotasListAdapter = MascotaListAdapter(mascotas!!){onItemClick()}
+        mascotasListAdapter = MascotaListAdapter(mascotas)
+
         recMascotas.adapter = mascotasListAdapter
 
 
     }
 
-    public fun onItemClick (){
-        Snackbar.make(v,"click",Snackbar.LENGTH_SHORT).show()
-    }
+//    public fun onItemClick (){
+//        Snackbar.make(v,"click",Snackbar.LENGTH_SHORT).show()
+//    }
 
 }

@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.manadigital.recyclerview1.R
 import com.manadigital.recyclerview1.entities.Mascota
 
-
+//class MascotaListAdapter (private var mascotasList: MutableList<Mascota>,val adapterOnClick : () -> Unit) : RecyclerView.Adapter<MascotaListAdapter.MascotaHolder>() {
 class MascotaListAdapter (private var mascotasList: MutableList<Mascota>) : RecyclerView.Adapter<MascotaListAdapter.MascotaHolder>() {
 
     companion object {
@@ -37,9 +37,10 @@ class MascotaListAdapter (private var mascotasList: MutableList<Mascota>) : Recy
     override fun onBindViewHolder(holder: MascotaHolder, position: Int) {
 
         holder.setName(mascotasList[position].nombre)
-        holder.getCardLayout().setOnClickListener {
-            //adapterOnClick()
-        }
+//        holder.getCardLayout().setOnClickListener {
+//            adapterOnClick()
+//        }
+
     }
 
     class MascotaHolder (v: View) : RecyclerView.ViewHolder(v){
@@ -55,10 +56,10 @@ class MascotaListAdapter (private var mascotasList: MutableList<Mascota>) : Recy
             txt.text = name
         }
 
-        fun getCardLayout ():CardView{
-
-            return view.findViewById(R.id.card_package_item)
-        }
+//        fun getCardLayout ():CardView{
+//
+//            return view.findViewById(R.id.card_package_item)
+//        }
 
     }
 
