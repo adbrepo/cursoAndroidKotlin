@@ -51,11 +51,11 @@ class MainFragment : Fragment() {
             task3()
         }
 
-//        scope.launch {
-//                val one = async { fetchDataFromServerOne() }
-//                val two = async { fetchDataFromServerTwo() }
-//                Log.d("Test", "The sum is ${one.await() + two.await()}")
-//            }
+        scope.launch {
+                val one = async { fetchDataFromServerOne() }
+                val two = async { fetchDataFromServerTwo() }
+                Log.d("Test", "The sum is ${one.await() + two.await()}")
+            }
 
 //        scope.launch {
 //            task1()
