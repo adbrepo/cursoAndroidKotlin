@@ -5,6 +5,7 @@
     <group
         android:id="@+id/grp_1"
         android:checkableBehavior="single">
+
         <item
             android:id="@+id/fragment1"
             android:icon="@drawable/iconbatman"
@@ -19,6 +20,5 @@
             android:title="Fragment3" />
 
     </group>
-
 
 </menu>

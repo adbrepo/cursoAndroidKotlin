@@ -4,16 +4,16 @@
         <item
             android:id="@+id/fragment1"
             android:icon="@drawable/iconbatman"
-            android:title="Pantalla1" />
+            android:title="Batman" />
+
         <item
             android:id="@+id/fragment2"
             android:icon="@drawable/iconjoker"
-            android:title="Pantalla2"
+            android:title="Joker"
             />
         <item
             android:id="@+id/fragment3"
             android:icon="@drawable/iconpenguin"
-            android:title="Pantalla3" />
-
+            android:title="Penguen" />
 
 </menu>

@@ -61,14 +61,14 @@ class listFragment : Fragment() {
         linearLayoutManager = LinearLayoutManager(context)
         recMascotas.layoutManager = linearLayoutManager
 
-      //  mascotasListAdapter = MascotaListAdapter(mascotas!!){onItemClick()}
-        mascotasListAdapter = MascotaListAdapter(mascotas)
+        mascotasListAdapter = MascotaListAdapter(mascotas){position -> onItemClick(position)}
+      //  mascotasListAdapter = MascotaListAdapter(mascotas)
 
         recMascotas.adapter = mascotasListAdapter
     }
 
-//    public fun onItemClick (){
-//        Snackbar.make(v,"click",Snackbar.LENGTH_SHORT).show()
-//    }
+     fun onItemClick ( position : Int ) {
+        Snackbar.make(v,position.toString(),Snackbar.LENGTH_SHORT).show()
+    }
 
 }
