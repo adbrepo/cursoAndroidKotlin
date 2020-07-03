@@ -58,6 +58,8 @@ class listFragment : Fragment() {
 
         recMascotas.setHasFixedSize(true)
 
+
+
         linearLayoutManager = LinearLayoutManager(context)
         recMascotas.layoutManager = linearLayoutManager
 

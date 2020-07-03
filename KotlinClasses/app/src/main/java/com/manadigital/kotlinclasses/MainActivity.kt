@@ -9,6 +9,8 @@ class MainActivity : AppCompatActivity() {
 
     var mascotas : MutableList<Mascota> = ArrayList<Mascota>()
 
+    lateinit var mascota : Mascota
+
     lateinit var cartel : String
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -22,6 +24,7 @@ class MainActivity : AppCompatActivity() {
         mascotas.add(Mascota("Carlos",Mascota.Constants.typeGato,"Pardo",7))
         mascotas.add(Mascota("David",Mascota.Constants.typeGato,"Arlequin",8))
 
+        mascota = Mascota("David",Mascota.Constants.typeGato,"Arlequin",8)
 
         for (mascotaActual in mascotas){
 
@@ -31,6 +34,8 @@ class MainActivity : AppCompatActivity() {
 
         mascotas[0].nombre="NombreNuevo"
         Log.d("Activity Main",mascotas[0].nombre)
+
+
 
     }
 }
