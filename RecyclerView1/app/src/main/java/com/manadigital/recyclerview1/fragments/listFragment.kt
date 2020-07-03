@@ -63,7 +63,7 @@ class listFragment : Fragment() {
         linearLayoutManager = LinearLayoutManager(context)
         recMascotas.layoutManager = linearLayoutManager
 
-        mascotasListAdapter = MascotaListAdapter(mascotas){position -> onItemClick(position)}
+        mascotasListAdapter = MascotaListAdapter(mascotas,requireContext()){position -> onItemClick(position)}
       //  mascotasListAdapter = MascotaListAdapter(mascotas)
 
         recMascotas.adapter = mascotasListAdapter

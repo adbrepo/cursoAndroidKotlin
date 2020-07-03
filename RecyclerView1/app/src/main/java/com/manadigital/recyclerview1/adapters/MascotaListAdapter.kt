@@ -1,15 +1,18 @@
 package com.manadigital.recyclerview1.adapters
 
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.manadigital.recyclerview1.R
 import com.manadigital.recyclerview1.entities.Mascota
 
-class MascotaListAdapter (private var mascotasList : MutableList<Mascota>,val onItemClick : (Int) -> Unit) : RecyclerView.Adapter<MascotaListAdapter.MascotaHolder>() {
+class MascotaListAdapter (private var mascotasList : MutableList<Mascota>, var context : Context, val onItemClick : (Int) -> Unit) : RecyclerView.Adapter<MascotaListAdapter.MascotaHolder>() {
 //class MascotaListAdapter (private var mascotasList: MutableList<Mascota>) : RecyclerView.Adapter<MascotaListAdapter.MascotaHolder>() {
 
     companion object {
@@ -37,7 +40,15 @@ class MascotaListAdapter (private var mascotasList : MutableList<Mascota>,val on
     override fun onBindViewHolder(holder: MascotaHolder, position: Int) {
 
         holder.setName(mascotasList[position].nombre)
-        holder.getCardLayout().setOnClickListener {
+
+        Glide
+            .with(context)
+            .load("https://picsum.photos/200")
+
+            .centerInside()
+            .into(holder.getImageView());
+
+            holder.getCardLayout().setOnClickListener {
             onItemClick(position)
         }
 
@@ -58,6 +69,10 @@ class MascotaListAdapter (private var mascotasList : MutableList<Mascota>,val on
 
         fun getCardLayout ():CardView{
             return view.findViewById(R.id.card_package_item)
+        }
+
+        fun getImageView () : ImageView {
+            return view.findViewById(R.id.img_item)
         }
 
     }
