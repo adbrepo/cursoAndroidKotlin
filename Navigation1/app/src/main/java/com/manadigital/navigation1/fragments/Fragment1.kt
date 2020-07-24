@@ -26,7 +26,6 @@ class Fragment1 : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         v = inflater.inflate(R.layout.fragment_fragment1, container, false)
-
         btnGoToFragment2 = v.findViewById(R.id.btn_go_to_fragment2)
         // Inflate the layout for this fragment
         return v

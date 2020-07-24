@@ -22,8 +22,6 @@ class Fragment2 : Fragment() {
     var mascotas : MutableList<Mascota> = ArrayList<Mascota>()
     lateinit var user : User
 
-
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?

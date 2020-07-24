@@ -35,7 +35,6 @@ class ListFragment : Fragment() {
 
     lateinit var btnAdd : FloatingActionButton
     lateinit var recMascotas : RecyclerView
-    lateinit var linearLayoutManager: LinearLayoutManager
 
     private lateinit var adapter: FirestoreRecyclerAdapter<Mascota, MascotaHolder>
 
