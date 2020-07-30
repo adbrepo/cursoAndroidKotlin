@@ -14,5 +14,11 @@ object  AppModule {
     fun provideEmployee(): Employee = Employee("")
 
     @Provides
-    fun provideCompany(employee: Employee): Company = Company("",employee)
+    fun provideEmployees(): MutableList<Employee> = mutableListOf()
+
+    @Provides
+    fun provideCompany(employees: MutableList<Employee>): Company = Company("",employees)
+
+
+
 }

@@ -9,7 +9,11 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
 import com.adb.hiltexample.R
+import com.adb.hiltexample.data.entities.Company
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.ktx.Firebase
 import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 
 
 @AndroidEntryPoint
@@ -20,6 +24,7 @@ class MainScreenFragment : Fragment() {
     }
 
     private lateinit var viewModel: MainScreenViewModel
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -34,6 +39,13 @@ class MainScreenFragment : Fragment() {
         // TODO: Use the ViewModel
 
         Log.d("Test",viewModel.showCompany())
+        viewModel.uploadFirebase()
+
+    }
+
+    override fun onStart() {
+        super.onStart()
+
     }
 
 }

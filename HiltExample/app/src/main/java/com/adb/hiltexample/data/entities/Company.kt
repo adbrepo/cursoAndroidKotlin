@@ -1,11 +1,9 @@
 package com.adb.hiltexample.data.entities
 
-import javax.inject.Inject
 
-class Company  (var name : String, var employee : Employee) {
-
+class Company  (var name : String, var  employees : MutableList<Employee>) {
 
     override fun toString(): String {
-        return "Company(name='$name', employee=$employee)"
+        return "Company(name='$name', employee=$employees)"
     }
 }
