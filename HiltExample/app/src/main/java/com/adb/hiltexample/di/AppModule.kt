@@ -6,11 +6,13 @@ import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.android.components.ApplicationComponent
+import javax.inject.Singleton
 
 @Module
 @InstallIn (ApplicationComponent::class)
 object  AppModule {
     @Provides
+
     fun provideEmployee(): Employee = Employee("")
 
     @Provides
@@ -18,7 +20,5 @@ object  AppModule {
 
     @Provides
     fun provideCompany(employees: MutableList<Employee>): Company = Company("",employees)
-
-
 
 }

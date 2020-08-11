@@ -28,8 +28,7 @@ class MainActivity : AppCompatActivity() {
 
         for (mascotaActual in mascotas){
 
-            Log.d("Main Activity",mascotaActual.nombre+" " + mascotaActual.tipo +" " + mascotaActual.raza+ " "
-            +mascotaActual.edad+ "\n")
+            Log.d("Main Activity",mascotaActual.nombre+" " + mascotaActual.tipo +" " + mascotaActual.raza+ " " +mascotaActual.edad+ "\n")
         }
 
         mascotas[0].nombre="NombreNuevo"

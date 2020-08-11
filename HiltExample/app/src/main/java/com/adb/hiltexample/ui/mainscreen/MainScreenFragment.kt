@@ -13,11 +13,17 @@ import com.adb.hiltexample.data.entities.Company
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.Job
+import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 
 @AndroidEntryPoint
-class MainScreenFragment : Fragment() {
+class MainScreenFragment   : Fragment() {
+
+
 
     companion object {
         fun newInstance() = MainScreenFragment()
@@ -38,14 +44,19 @@ class MainScreenFragment : Fragment() {
         viewModel = ViewModelProvider(this).get(MainScreenViewModel::class.java)
         // TODO: Use the ViewModel
 
-        Log.d("Test",viewModel.showCompany())
-        viewModel.uploadFirebase()
+     //   viewModel.uploadFirebase()
 
     }
 
     override fun onStart() {
         super.onStart()
+        val parentJob = Job()
+        val scope = CoroutineScope(Dispatchers.Main + parentJob)
 
+        scope.launch {
+
+            Log.d("Test",viewModel.showCompany())
+        }
     }
 
 }
