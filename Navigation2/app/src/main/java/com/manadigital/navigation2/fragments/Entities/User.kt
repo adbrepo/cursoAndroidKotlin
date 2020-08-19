@@ -4,8 +4,8 @@ import android.os.Parcel
 import android.os.Parcelable
 
 class User(email: String, password: String) : Parcelable {
-
     var email: String
+
     var password: String
 
     init {

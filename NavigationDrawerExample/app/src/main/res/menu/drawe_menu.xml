@@ -18,6 +18,10 @@
             android:id="@+id/fragment3"
             android:icon="@drawable/iconpenguin"
             android:title="Fragment3" />
+        <item
+            android:id="@+id/test"
+            android:icon="@drawable/iconpenguin"
+            android:title="noNav" />
 
     </group>
 

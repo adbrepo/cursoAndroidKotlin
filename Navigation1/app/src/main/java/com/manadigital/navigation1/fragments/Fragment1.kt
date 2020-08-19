@@ -21,15 +21,14 @@ class Fragment1 : Fragment() {
     lateinit var btnGoToFragment2: Button
 
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         v = inflater.inflate(R.layout.fragment_fragment1, container, false)
+
         btnGoToFragment2 = v.findViewById(R.id.btn_go_to_fragment2)
         // Inflate the layout for this fragment
         return v
     }
+
 
 
     override fun onStart() {

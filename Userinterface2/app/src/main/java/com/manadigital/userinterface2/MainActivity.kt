@@ -29,16 +29,17 @@ class MainActivity : AppCompatActivity() {
         btnAccept = findViewById(R.id.btn_accept)
         rootLayout = findViewById(R.id.root_layout)
 
+
         btnAccept.setOnClickListener {
-            if (edtInput.length()>0){
+
+            if (edtInput.length()>0) {
                 txtCartel.text = "Texto ingresado: " + edtInput.text
             }
+
             else{
                 Snackbar.make(rootLayout, "Campo de datos vacio", Snackbar.LENGTH_SHORT).show()
             }
         }
     }
-    fun nombre () {
 
-    }
 }

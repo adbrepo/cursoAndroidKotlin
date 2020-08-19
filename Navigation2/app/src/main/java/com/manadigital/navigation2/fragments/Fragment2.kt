@@ -39,6 +39,8 @@ class Fragment2 : Fragment() {
         mascotas = Fragment2Args.fromBundle(requireArguments()).listaMascotas.toMutableList()
         user = Fragment2Args.fromBundle(requireArguments()).user
 
+
+
         Snackbar.make(v,mascotaName,Snackbar.LENGTH_SHORT).show()
 
 

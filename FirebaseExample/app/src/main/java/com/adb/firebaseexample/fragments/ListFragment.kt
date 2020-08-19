@@ -75,6 +75,7 @@ class ListFragment : Fragment() {
 
         // Leer datos una sola vez
         var docRef = db.collection("mascotas").document("Pedro")
+
         docRef.get()
             .addOnSuccessListener { dataSnapshot ->
                 if (dataSnapshot != null) {

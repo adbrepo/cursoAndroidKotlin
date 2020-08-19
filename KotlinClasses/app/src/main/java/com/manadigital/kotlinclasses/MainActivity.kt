@@ -17,6 +17,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+
+
         mascotas.add(Mascota("Pedro",Mascota.Constants.typePerro,"Colie",3))
         mascotas.add(Mascota("Rodolfo",Mascota.Constants.typePerro,"Fox Terrier",4))
         mascotas.add(Mascota("Emilio",Mascota.Constants.typePerro,"Gran Danes",5))
@@ -26,6 +28,9 @@ class MainActivity : AppCompatActivity() {
 
         mascota = Mascota("David",Mascota.Constants.typeGato,"Arlequin",8)
 
+        Log.d("Test",mascota.toString())
+
+
         for (mascotaActual in mascotas){
 
             Log.d("Main Activity",mascotaActual.nombre+" " + mascotaActual.tipo +" " + mascotaActual.raza+ " " +mascotaActual.edad+ "\n")
@@ -33,8 +38,6 @@ class MainActivity : AppCompatActivity() {
 
         mascotas[0].nombre="NombreNuevo"
         Log.d("Activity Main",mascotas[0].nombre)
-
-
 
     }
 }

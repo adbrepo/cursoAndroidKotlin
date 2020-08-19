@@ -11,8 +11,9 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.manadigital.recyclerview1.R
 import com.manadigital.recyclerview1.entities.Mascota
+import com.manadigital.recyclerview1.fragments.listFragmentDirections
 
-class MascotaListAdapter (private var mascotasList : MutableList<Mascota>, var context : Context, val onItemClick : (Int) -> Unit) : RecyclerView.Adapter<MascotaListAdapter.MascotaHolder>() {
+class MascotaListAdapter (private var mascotasList : MutableList<Mascota>, val onItemClick : (Int) -> Unit) : RecyclerView.Adapter<MascotaListAdapter.MascotaHolder>() {
 //class MascotaListAdapter (private var mascotasList: MutableList<Mascota>) : RecyclerView.Adapter<MascotaListAdapter.MascotaHolder>() {
 
     companion object {
@@ -22,9 +23,7 @@ class MascotaListAdapter (private var mascotasList : MutableList<Mascota>, var c
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MascotaHolder {
         val view =  LayoutInflater.from(parent.context).inflate(R.layout.item_mascota,parent,false)
-        return (MascotaHolder(
-            view
-        ))
+        return (MascotaHolder(view))
     }
 
     override fun getItemCount(): Int {
@@ -41,15 +40,17 @@ class MascotaListAdapter (private var mascotasList : MutableList<Mascota>, var c
 
         holder.setName(mascotasList[position].nombre)
 
-        Glide
-            .with(context)
-            .load("https://firebasestorage.googleapis.com/v0/b/firestoreexample-ec489.appspot.com/o/Fotos%2FGUERNICA.jpg?alt=media&token=001a8ffc-96c2-4aeb-9120-8d5099b3fa1c")
-
-            .centerInside()
-            .into(holder.getImageView());
-
+//        Glide
+//            .with(context)
+//            .load("https://firebasestorage.googleapis.com/v0/b/firestoreexample-ec489.appspot.com/o/Fotos%2FGUERNICA.jpg?alt=media&token=001a8ffc-96c2-4aeb-9120-8d5099b3fa1c")
+//
+//            .centerInside()
+//            .into(holder.getImageView());
+//
             holder.getCardLayout().setOnClickListener {
-            onItemClick(position)
+                onItemClick(position)
+
+
         }
 
     }
@@ -70,10 +71,10 @@ class MascotaListAdapter (private var mascotasList : MutableList<Mascota>, var c
         fun getCardLayout ():CardView{
             return view.findViewById(R.id.card_package_item)
         }
-
-        fun getImageView () : ImageView {
-            return view.findViewById(R.id.img_item)
-        }
+//
+//        fun getImageView () : ImageView {
+//            return view.findViewById(R.id.img_item)
+//        }
 
     }
 

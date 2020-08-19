@@ -57,16 +57,14 @@ class listFragment : Fragment() {
         mascotas.add(Mascota("David",Mascota.Constants.typeGato,"Arlequin",8))
 
         recMascotas.setHasFixedSize(true)
-
-
-
         linearLayoutManager = LinearLayoutManager(context)
         recMascotas.layoutManager = linearLayoutManager
 
-        mascotasListAdapter = MascotaListAdapter(mascotas,requireContext()){position -> onItemClick(position)}
-      //  mascotasListAdapter = MascotaListAdapter(mascotas)
+        mascotasListAdapter = MascotaListAdapter(mascotas){position -> onItemClick(position)}
+        //mascotasListAdapter = MascotaListAdapter(mascotas)
 
         recMascotas.adapter = mascotasListAdapter
+
     }
 
      fun onItemClick ( position : Int ) {
