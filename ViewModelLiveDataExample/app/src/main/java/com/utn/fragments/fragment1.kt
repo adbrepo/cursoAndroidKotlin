@@ -58,9 +58,7 @@ class fragment1 : Fragment() {
 
         btnChange.setOnClickListener {
 
-
-            val action = fragment1Directions.actionFragment1ToFragment2()
-            v.findNavController().navigate(action)
+            viewModel.changeName()
         }
     }
 }

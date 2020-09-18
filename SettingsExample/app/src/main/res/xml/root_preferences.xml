@@ -21,7 +21,8 @@
 
         <SwitchPreferenceCompat
             app:key="sync"
-            app:title="@string/sync_title" />
+            app:title="@string/sync_title"
+            />
 
         <SwitchPreferenceCompat
             app:dependency="sync"

@@ -49,13 +49,11 @@ class MascotaListAdapter (private var mascotasList : MutableList<Mascota>, val o
 //
             holder.getCardLayout().setOnClickListener {
                 onItemClick(position)
-
-
-        }
+            }
 
     }
 
-    class MascotaHolder (v: View) : RecyclerView.ViewHolder(v){
+    class MascotaHolder (v: View) : RecyclerView.ViewHolder(v) {
 
         private var view: View
 
@@ -63,8 +61,8 @@ class MascotaListAdapter (private var mascotasList : MutableList<Mascota>, val o
             this.view = v
         }
 
-        fun setName(name : String) {
-            val txt : TextView = view.findViewById(R.id.txt_name_item)
+        fun setName(name: String) {
+            val txt: TextView = view.findViewById(R.id.txt_name_item)
             txt.text = name
         }
 
@@ -77,5 +75,4 @@ class MascotaListAdapter (private var mascotasList : MutableList<Mascota>, val o
 //        }
 
     }
-
 }

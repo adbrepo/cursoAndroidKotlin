@@ -22,10 +22,10 @@ class listFragment : Fragment() {
     lateinit var v: View
 
     lateinit var recMascotas : RecyclerView
+    private lateinit var linearLayoutManager: LinearLayoutManager
+
 
     var mascotas : MutableList<Mascota> = ArrayList<Mascota>()
-
-    private lateinit var linearLayoutManager: LinearLayoutManager
     private lateinit var mascotasListAdapter: MascotaListAdapter
 
     companion object {
@@ -61,7 +61,7 @@ class listFragment : Fragment() {
         recMascotas.layoutManager = linearLayoutManager
 
         mascotasListAdapter = MascotaListAdapter(mascotas){position -> onItemClick(position)}
-        //mascotasListAdapter = MascotaListAdapter(mascotas)
+      //  mascotasListAdapter = MascotaListAdapter(mascotas)
 
         recMascotas.adapter = mascotasListAdapter
 

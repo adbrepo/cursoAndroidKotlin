@@ -14,10 +14,19 @@
         android:id="@+id/fragment2"
         android:name="com.adb.bottomnavigationbarexample.fragments.Fragment2"
         android:label="fragment_2"
-        tools:layout="@layout/fragment_2" />
+        tools:layout="@layout/fragment_2" >
+        <action
+            android:id="@+id/action_fragment2_to_blankFragment"
+            app:destination="@id/blankFragment" />
+    </fragment>
     <fragment
         android:id="@+id/fragment3"
         android:name="com.adb.bottomnavigationbarexample.fragments.Fragment3"
         android:label="fragment_3"
         tools:layout="@layout/fragment_3" />
+    <fragment
+        android:id="@+id/blankFragment"
+        android:name="com.adb.bottomnavigationbarexample.fragments.BlankFragment"
+        android:label="fragment_blank"
+        tools:layout="@layout/fragment_blank" />
 </navigation>

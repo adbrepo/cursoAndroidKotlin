@@ -44,9 +44,9 @@ class MainFragment : Fragment() {
 
         val id = when(item.itemId) {
 
-            R.id.action_add ->Snackbar.make(v, "add", Snackbar.LENGTH_SHORT).show()
+            R.id.action_add -> Snackbar.make(v, "add", Snackbar.LENGTH_SHORT).show()
 
-            R.id.action_fav ->Snackbar.make(v, "fav", Snackbar.LENGTH_SHORT).show()
+            R.id.action_fav -> Snackbar.make(v, "fav", Snackbar.LENGTH_SHORT).show()
 
             else -> ""
         }

@@ -16,11 +16,14 @@ import androidx.preference.Preference
 import androidx.preference.PreferenceManager
 
 import com.utn.settingsexample.R
+import kotlin.properties.Delegates
 
 class MainFragment : Fragment() {
 
     lateinit var v : View
     lateinit var btnSettings : Button
+
+    var valor : Int? = null
 
     companion object {
         fun newInstance() = MainFragment()
@@ -58,9 +61,8 @@ class MainFragment : Fragment() {
 
             val action = MainFragmentDirections.actionMainFragmentToSettingsActivity()
             v.findNavController().navigate(action)
+
         }
     }
-
-
 
 }

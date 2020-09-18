@@ -35,13 +35,13 @@ class mainFragment : Fragment() {
 
     override fun onStart() {
         super.onStart()
-        val sharedPref: SharedPreferences = context!!.getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE)
+
+        val sharedPref: SharedPreferences = requireContext().getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE)
 
         val editor = sharedPref.edit()
         editor.putString("USER", "Ale")
-
+        editor.putInt("CANTIDAD",5)
         editor.apply()
-
         user = sharedPref.getString("USER","default")!!
 
         Log.d("TAG",user)

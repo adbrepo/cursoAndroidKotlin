@@ -21,9 +21,6 @@ class containerFragment : Fragment() {
     lateinit var viewPager: ViewPager2
     lateinit var tabLayout: TabLayout
 
-    private val titles =
-        arrayOf("Movies", "Events", "Tickets")
-
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -43,8 +40,9 @@ class containerFragment : Fragment() {
     override fun onStart() {
         super.onStart()
 
-        viewPager.setAdapter(createCardAdapter())
+        viewPager.setAdapter(ViewPagerAdapter(requireActivity()))
        // viewPager.isUserInputEnabled = false
+
         TabLayoutMediator(tabLayout, viewPager, TabLayoutMediator.TabConfigurationStrategy { tab, position ->
                 when (position) {
                     0 -> tab.text = "Tab1"
@@ -55,9 +53,6 @@ class containerFragment : Fragment() {
             }).attach()
     }
 
-    private fun createCardAdapter(): ViewPagerAdapter? {
-        return ViewPagerAdapter(requireActivity())
-    }
 
     class ViewPagerAdapter(fragmentActivity: FragmentActivity) : FragmentStateAdapter(fragmentActivity) {
         override fun createFragment(position: Int): Fragment {

@@ -1,5 +1,6 @@
 package com.adb.firebaseexample.fragments
 
+import android.content.ContentValues.TAG
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -36,6 +37,8 @@ class ListFragment : Fragment() {
     lateinit var btnAdd : FloatingActionButton
     lateinit var recMascotas : RecyclerView
 
+    var mascotaList : MutableList<Mascota> = arrayListOf()
+
     private lateinit var adapter: FirestoreRecyclerAdapter<Mascota, MascotaHolder>
 
 
@@ -67,7 +70,12 @@ class ListFragment : Fragment() {
         var mascota : Mascota = Mascota("Pedro",Mascota.Constants.typePerro,"Colie",2,"imagen.com")
         db.collection("mascotas").document(mascota.nombre).set(mascota)
 
+
         viewModel.initTestList()
+
+
+
+
 
         for (mascota in viewModel.mascotas) {
             db.collection("mascotas").document(mascota.nombre).set(mascota)
@@ -89,6 +97,7 @@ class ListFragment : Fragment() {
                 Log.d("Test", "get failed with ", exception)
             }
 
+        // Se queda escuchando cambios
         docRef = db.collection("mascotas").document("Pedro")
         docRef.addSnapshotListener { snapshot, e ->
             if (e != null) {
@@ -104,38 +113,53 @@ class ListFragment : Fragment() {
             }
         }
 
-        fillRecycler()
+        //traer lista de datos
 
+        db.collection("mascotas")
+             .whereEqualTo("tipo", "PERRO")
+             .limit(20)
+             .orderBy("edad")
+            .get()
+            .addOnSuccessListener { snapshot ->
+                if (snapshot != null) {
+                    for (mascota in snapshot) {
+                        mascotaList.add(mascota.toObject())
+                    }
+                }
+            }
+            .addOnFailureListener { exception ->
+                Log.w(TAG, "Error getting documents: ", exception)
+            }
     }
 
-    fun fillRecycler(){
-        val rootRef = FirebaseFirestore.getInstance()
-        val query = rootRef.collection("mascotas")
-
-        val options = FirestoreRecyclerOptions.Builder<Mascota>()
-            .setQuery(query, Mascota::class.java)
-            .build()
-
-        adapter = object :
-            FirestoreRecyclerAdapter<Mascota, MascotaHolder>(options) {
-
-            override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MascotaHolder{
-                val view = LayoutInflater.from(parent.context)
-                    .inflate(R.layout.item_mascota, parent, false)
-                return MascotaHolder(view)
-            }
-
-            override fun onBindViewHolder(holder: MascotaHolder, position: Int, model: Mascota) {
-                holder.setName(model.nombre)
-            }
-
-            override fun onDataChanged() {
-                super.onDataChanged()
-            }
-        }
-        adapter.startListening()
-        recMascotas.adapter = adapter
-    }
+//    fun fillRecycler(){
+//        val rootRef = FirebaseFirestore.getInstance()
+//        val query = rootRef.collection("mascotas")
+//
+//        val options = FirestoreRecyclerOptions.Builder<Mascota>()
+//            .setQuery(query, Mascota::class.java)
+//            .build()
+//
+//        adapter = object :
+//            FirestoreRecyclerAdapter<Mascota, MascotaHolder>(options) {
+//
+//            override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MascotaHolder{
+//                val view = LayoutInflater.from(parent.context)
+//                    .inflate(R.layout.item_mascota, parent, false)
+//                return MascotaHolder(view)
+//            }
+//
+//            override fun onBindViewHolder(holder: MascotaHolder, position: Int, model: Mascota) {
+//                holder.setName(model.nombre)
+//            }
+//
+//            override fun onDataChanged() {
+//                super.onDataChanged()
+//            }
+//        }
+//        adapter.startListening()
+//        recMascotas.adapter = adapter
+//    }
 }
 
 
