@@ -4,6 +4,7 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.cardview.widget.CardView
@@ -13,7 +14,11 @@ import com.manadigital.recyclerview1.R
 import com.manadigital.recyclerview1.entities.Mascota
 import com.manadigital.recyclerview1.fragments.listFragmentDirections
 
-class MascotaListAdapter (private var mascotasList : MutableList<Mascota>, val onItemClick : (Int) -> Unit) : RecyclerView.Adapter<MascotaListAdapter.MascotaHolder>() {
+class MascotaListAdapter(
+    private var mascotasList: MutableList<Mascota>,
+    val onItemClick: (Int) -> Boolean
+
+) : RecyclerView.Adapter<MascotaListAdapter.MascotaHolder>() {
 //class MascotaListAdapter (private var mascotasList: MutableList<Mascota>) : RecyclerView.Adapter<MascotaListAdapter.MascotaHolder>() {
 
     companion object {
@@ -47,11 +52,16 @@ class MascotaListAdapter (private var mascotasList : MutableList<Mascota>, val o
 //            .centerInside()
 //            .into(holder.getImageView());
 //
-            holder.getCardLayout().setOnClickListener {
+            holder.getCardLayout().setOnLongClickListener() {
                 onItemClick(position)
             }
 
+            holder.getButton().setOnClickListener {
+
+            }
+
     }
+
 
     class MascotaHolder (v: View) : RecyclerView.ViewHolder(v) {
 
@@ -69,6 +79,11 @@ class MascotaListAdapter (private var mascotasList : MutableList<Mascota>, val o
         fun getCardLayout ():CardView{
             return view.findViewById(R.id.card_package_item)
         }
+
+        fun getButton (): Button {
+            return view.findViewById(R.id.btn_item)
+        }
+
 //
 //        fun getImageView () : ImageView {
 //            return view.findViewById(R.id.img_item)

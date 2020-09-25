@@ -42,6 +42,7 @@ class mainFragment : Fragment() {
         editor.putString("USER", "Ale")
         editor.putInt("CANTIDAD",5)
         editor.apply()
+
         user = sharedPref.getString("USER","default")!!
 
         Log.d("TAG",user)

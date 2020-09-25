@@ -1,6 +1,5 @@
 package com.manadigital.recyclerview1.fragments
 
-import androidx.lifecycle.ViewModelProviders
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -60,15 +59,21 @@ class listFragment : Fragment() {
         linearLayoutManager = LinearLayoutManager(context)
         recMascotas.layoutManager = linearLayoutManager
 
-        mascotasListAdapter = MascotaListAdapter(mascotas){position -> onItemClick(position)}
+        mascotasListAdapter = MascotaListAdapter(mascotas) { x ->
+            onItemClick(x)
+        }
+
       //  mascotasListAdapter = MascotaListAdapter(mascotas)
 
         recMascotas.adapter = mascotasListAdapter
 
     }
 
-     fun onItemClick ( position : Int ) {
+     fun onItemClick ( position : Int ) : Boolean {
         Snackbar.make(v,position.toString(),Snackbar.LENGTH_SHORT).show()
+         return true
     }
+
+
 
 }

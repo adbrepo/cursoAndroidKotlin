@@ -70,11 +70,9 @@ class ListFragment : Fragment() {
         var mascota : Mascota = Mascota("Pedro",Mascota.Constants.typePerro,"Colie",2,"imagen.com")
         db.collection("mascotas").document(mascota.nombre).set(mascota)
 
+        db.collection("mascotas").add(mascota)
 
         viewModel.initTestList()
-
-
-
 
 
         for (mascota in viewModel.mascotas) {

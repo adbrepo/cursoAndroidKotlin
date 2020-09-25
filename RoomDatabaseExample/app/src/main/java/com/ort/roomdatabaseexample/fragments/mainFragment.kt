@@ -2,13 +2,13 @@ package com.ort.roomdatabaseexample.fragments
 
 import android.os.Bundle
 import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
-
+import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
 import com.ort.roomdatabaseexample.R
 import com.ort.roomdatabaseexample.database.appDatabase
 import com.ort.roomdatabaseexample.database.userDao
@@ -54,6 +54,7 @@ class mainFragment : Fragment() {
         btnSearch = v.findViewById(R.id.btn_search)
         btnDebug = v.findViewById(R.id.btn_debug)
 
+
         return v
     }
 
@@ -67,18 +68,18 @@ class mainFragment : Fragment() {
         btnAdd.setOnClickListener {
 
 
-            userDao?.insertPerson(User(i,edtName.text.toString(),edtEmail.text.toString()))
+            userDao?.insertPerson(User(i, edtName.text.toString(), edtEmail.text.toString()))
             i += 1
         }
 
         btnDelete.setOnClickListener {
 
-            userDao?.delete(User(0,"",""))
+            userDao?.delete(User(0, "", ""))
         }
 
         btnEdit.setOnClickListener {
 
-            userDao?.updatePerson(User(0,"Juan","juan@utn.com"))
+            userDao?.updatePerson(User(0, "Juan", "juan@utn.com"))
         }
 
         btnSearch.setOnClickListener {
