@@ -68,6 +68,7 @@ class ListFragment : Fragment() {
         super.onStart()
 
         var mascota : Mascota = Mascota("Pedro",Mascota.Constants.typePerro,"Colie",2,"imagen.com")
+
         db.collection("mascotas").document(mascota.nombre).set(mascota)
 
         db.collection("mascotas").add(mascota)

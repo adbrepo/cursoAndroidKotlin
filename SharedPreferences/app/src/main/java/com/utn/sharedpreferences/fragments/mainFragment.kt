@@ -37,8 +37,8 @@ class mainFragment : Fragment() {
         super.onStart()
 
         val sharedPref: SharedPreferences = requireContext().getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE)
-
         val editor = sharedPref.edit()
+
         editor.putString("USER", "Ale")
         editor.putInt("CANTIDAD",5)
         editor.apply()

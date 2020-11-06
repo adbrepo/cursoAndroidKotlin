@@ -40,9 +40,6 @@ class MainFragment : Fragment() {
 
 
         val parentJob = Job()
-        val handler = CoroutineExceptionHandler { _, throwable ->
-            Log.d("demo", "handler: $throwable") // Prints "handler: java.io.IOException"
-        }
         val scope = CoroutineScope(Dispatchers.Default + parentJob)
 
         scope.launch {
@@ -50,12 +47,13 @@ class MainFragment : Fragment() {
             task2()
             task3()
         }
+//        task4()
 
         scope.launch {
-                val one = async { fetchDataFromServerOne() }
-                val two = async { fetchDataFromServerTwo() }
-                Log.d("Test", "The sum is ${one.await() + two.await()}")
-            }
+            val one = async { fetchDataFromServerOne() }
+            val two = async { fetchDataFromServerTwo() }
+            Log.d("Test", "The sum is ${one.await() + two.await()}")
+        }
 
 //        scope.launch {
 //            task1()
@@ -67,7 +65,6 @@ class MainFragment : Fragment() {
 //            task3()
 //        }
 
-        task4()
 
 
     }
