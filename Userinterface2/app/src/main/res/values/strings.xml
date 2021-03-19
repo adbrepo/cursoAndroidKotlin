@@ -1,5 +1,8 @@
 <resources>
     <string name="app_name">UserInterface2</string>
-    <string name="hint_edit_text">Ingrese nombre</string>
+    <string name="hint_edit_text">Ingrese el código</string>
+
+    <string name="titulo_boton">Ingresar</string>
+
 
 </resources>

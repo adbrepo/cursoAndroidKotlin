@@ -20,6 +20,8 @@ class MainActivity : AppCompatActivity() {
     lateinit var btnAccept : Button
     lateinit var rootLayout: ConstraintLayout
 
+    var text : String = "hola"
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -30,10 +32,18 @@ class MainActivity : AppCompatActivity() {
         rootLayout = findViewById(R.id.root_layout)
 
 
+//
+//         if(edtInput.text.toString().equals(text)){
+//
+//         }
+//        else{
+//
+//        }
+
         btnAccept.setOnClickListener {
 
-            if (edtInput.length()>0) {
-                txtCartel.text = "Texto ingresado: " + edtInput.text
+            if (edtInput.length()>0 ) {
+                txtCartel.text = "Texto ingresado: " + edtInput
             }
 
             else{
@@ -41,5 +51,4 @@ class MainActivity : AppCompatActivity() {
             }
         }
     }
-
 }

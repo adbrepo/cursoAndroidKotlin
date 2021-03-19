@@ -19,7 +19,7 @@ import com.manadigital.navigation2.fragments.Entities.User
 class Fragment2 : Fragment() {
 
     lateinit var v: View
-    var mascotas : MutableList<Mascota> = ArrayList<Mascota>()
+    var mascotas : MutableList<Mascota> = mutableListOf()
     lateinit var user : User
 
     override fun onCreateView(

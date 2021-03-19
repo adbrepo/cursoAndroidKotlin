@@ -12,18 +12,19 @@
         android:layout_height="wrap_content"
         android:text="texto estático"
         android:textSize="30sp"
-        app:layout_constraintBottom_toTopOf="@+id/btn_change_text"
+        app:layout_constraintBottom_toTopOf="@+id/btnChangText"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline" />
 
     <Button
-        android:id="@+id/btn_change_text"
+        android:id="@+id/btnChangText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Cambiar Texto"
+        android:text="@string/text_button"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txt_label" />
 
@@ -32,6 +33,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.2" />
+        app:layout_constraintGuide_percent="0.15" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

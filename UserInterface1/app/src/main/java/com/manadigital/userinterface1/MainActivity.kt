@@ -16,16 +16,12 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         txtLabel = findViewById(R.id.txt_label)                 //Referencia de vistas al xml
-        btnChangeText = findViewById(R.id.btn_change_text)
+        btnChangeText = findViewById(R.id.btnChangText)
 
 
         btnChangeText.setOnClickListener {
+
             txtLabel.text = "texto cambiado"
-            
         }
-
-
-
-
     }
 }

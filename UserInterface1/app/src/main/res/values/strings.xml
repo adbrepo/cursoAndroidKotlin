@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">User Interface 1</string>
+
+    <string name="text_button">Cambiar Texto</string>
+
+
+
 </resources>
