@@ -6,7 +6,7 @@
         android:id="@+id/action_add"
         android:icon="@drawable/add"
         android:title="add"
-        app:showAsAction="ifRoom" />
+        app:showAsAction="always" />
 
     <item
         android:id="@+id/action_fav"

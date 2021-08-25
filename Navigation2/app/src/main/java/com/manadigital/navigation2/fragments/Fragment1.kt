@@ -53,8 +53,10 @@ class Fragment1 : Fragment() {
         btnGoToFragment2.setOnClickListener {
 
             valor = "ALEEEE"
-            val action = Fragment1Directions.actionFragment1ToFragment2(valor,20,mascotas.toTypedArray(),user)
+    val action = Fragment1Directions.actionFragment1ToFragment2(valor,20,mascotas.toTypedArray(),user)
             v.findNavController().navigate(action)
+
+
         }
     }
 }

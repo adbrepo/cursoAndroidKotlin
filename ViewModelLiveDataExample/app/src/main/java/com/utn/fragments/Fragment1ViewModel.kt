@@ -11,8 +11,11 @@ class Fragment1ViewModel : ViewModel() {
     lateinit var texto : String
 
     fun changeName (){
-
         name.value = "pepe"
+    }
+
+    fun changeText (text : String){
+        texto = text
     }
 
 

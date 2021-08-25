@@ -31,7 +31,7 @@ class mainFragment : Fragment() {
     lateinit var btnEdit : Button
     lateinit var btnSearch : Button
     lateinit var btnDebug : Button
-    lateinit var userList :MutableList<User>
+    lateinit var userList : MutableList<User>
 
 
     var i : Int =0

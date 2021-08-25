@@ -38,7 +38,7 @@ class fragment2 : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        viewModel2 = ViewModelProvider(requireActivity()).get(Fragment2ViewModel::class.java)
+        viewModel2 = ViewModelProvider(this).get(Fragment2ViewModel::class.java)
         viewModel1 = ViewModelProvider(requireActivity()).get(Fragment1ViewModel::class.java)
 
         // TODO: Use the ViewModel
@@ -48,7 +48,7 @@ class fragment2 : Fragment() {
         super.onStart()
         btnChange.setOnClickListener {
 
-            viewModel1.name.value = "otro valor"
+            viewModel1.changeName()
         }
     }
 

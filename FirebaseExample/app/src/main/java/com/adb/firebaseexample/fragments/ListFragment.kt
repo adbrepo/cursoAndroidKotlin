@@ -39,7 +39,7 @@ class ListFragment : Fragment() {
 
     var mascotaList : MutableList<Mascota> = arrayListOf()
 
-    private lateinit var adapter: FirestoreRecyclerAdapter<Mascota, MascotaHolder>
+//    private lateinit var adapter: FirestoreRecyclerAdapter<Mascota, MascotaHolder>
 
 
     // Access a Cloud Firestore instance from your Activity
@@ -73,6 +73,7 @@ class ListFragment : Fragment() {
 
         db.collection("mascotas").add(mascota)
 
+
         viewModel.initTestList()
 
 
@@ -100,7 +101,7 @@ class ListFragment : Fragment() {
         docRef = db.collection("mascotas").document("Pedro")
         docRef.addSnapshotListener { snapshot, e ->
             if (e != null) {
-                Log.w("Test", "Listen failed.", e)
+                Log.d("Test", "Listen failed.", e)
                 return@addSnapshotListener
             }
 
@@ -115,9 +116,9 @@ class ListFragment : Fragment() {
         //traer lista de datos
 
         db.collection("mascotas")
-             .whereEqualTo("tipo", "PERRO")
-             .limit(20)
-             .orderBy("edad")
+//             .whereEqualTo("tipo", "PERRO")
+//             .limit(20)
+//             .orderBy("edad")
             .get()
             .addOnSuccessListener { snapshot ->
                 if (snapshot != null) {
@@ -130,35 +131,6 @@ class ListFragment : Fragment() {
                 Log.w(TAG, "Error getting documents: ", exception)
             }
     }
-
-//    fun fillRecycler(){
-//        val rootRef = FirebaseFirestore.getInstance()
-//        val query = rootRef.collection("mascotas")
-//
-//        val options = FirestoreRecyclerOptions.Builder<Mascota>()
-//            .setQuery(query, Mascota::class.java)
-//            .build()
-//
-//        adapter = object :
-//            FirestoreRecyclerAdapter<Mascota, MascotaHolder>(options) {
-//
-//            override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MascotaHolder{
-//                val view = LayoutInflater.from(parent.context)
-//                    .inflate(R.layout.item_mascota, parent, false)
-//                return MascotaHolder(view)
-//            }
-//
-//            override fun onBindViewHolder(holder: MascotaHolder, position: Int, model: Mascota) {
-//                holder.setName(model.nombre)
-//            }
-//
-//            override fun onDataChanged() {
-//                super.onDataChanged()
-//            }
-//        }
-//        adapter.startListening()
-//        recMascotas.adapter = adapter
-//    }
 }
 
 

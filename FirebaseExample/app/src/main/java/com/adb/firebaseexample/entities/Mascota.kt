@@ -4,7 +4,11 @@ import android.os.Parcel
 import android.os.Parcelable
 
 
-class Mascota(nombre: String, tipo: String, raza: String, edad: Int, urlImage: String) :
+class User( var nombre : String){
+
+}
+
+class Mascota( nombre: String, tipo: String, raza: String, edad: Int, urlImage: String) :
     Parcelable {
     var nombre: String
 

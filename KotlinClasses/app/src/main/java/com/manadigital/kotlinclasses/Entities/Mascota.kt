@@ -1,6 +1,9 @@
 package com.manadigital.kotlinclasses.Entities
 
-class Mascota (nombre : String, tipo : String , raza : String, edad :Int) {
+import android.os.Parcelable
+import kotlinx.android.parcel.Parcelize
+
+class Mascota (nombre : String , tipo : String , raza : String, edad :Int)  {
 
      var nombre : String
      var tipo : String
@@ -16,7 +19,6 @@ class Mascota (nombre : String, tipo : String , raza : String, edad :Int) {
 
     fun  CalcularEdad (edad : Int) : Int {
         var edadnueva : Int
-
         edadnueva = edad*7
         return edadnueva
     }
@@ -27,7 +29,6 @@ class Mascota (nombre : String, tipo : String , raza : String, edad :Int) {
             val typePerro = "PERRO"
         }
     }
-
 
     override fun toString(): String {
         return "Mascota(nombre='$nombre', tipo='$tipo', raza='$raza', edad=$edad)"

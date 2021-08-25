@@ -29,9 +29,6 @@ class Fragment1 : Fragment() {
         return v
     }
 
-
-
-
     override fun onStart() {
         super.onStart()
 
@@ -39,7 +36,6 @@ class Fragment1 : Fragment() {
 
             val action2 = Fragment1Directions.actionFragment1ToFragment2()
             v.findNavController().navigate(action2)
-
         }
     }
 }

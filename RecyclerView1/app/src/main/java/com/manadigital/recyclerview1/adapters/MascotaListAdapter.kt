@@ -16,9 +16,13 @@ import com.manadigital.recyclerview1.fragments.listFragmentDirections
 
 class MascotaListAdapter(
     private var mascotasList: MutableList<Mascota>,
-    val onItemClick: (Int) -> Boolean
+    val context: Context,
+    val onItemClick : (Int) -> Unit
+
 
 ) : RecyclerView.Adapter<MascotaListAdapter.MascotaHolder>() {
+
+
 //class MascotaListAdapter (private var mascotasList: MutableList<Mascota>) : RecyclerView.Adapter<MascotaListAdapter.MascotaHolder>() {
 
     companion object {
@@ -36,28 +40,24 @@ class MascotaListAdapter(
         return mascotasList.size
     }
 
-    fun setData(newData: ArrayList<Mascota>) {
-        this.mascotasList = newData
-        this.notifyDataSetChanged()
-    }
+//    fun setData(newData: ArrayList<Mascota>) {
+//        this.mascotasList = newData
+//        this.notifyDataSetChanged()
+//    }
 
     override fun onBindViewHolder(holder: MascotaHolder, position: Int) {
 
         holder.setName(mascotasList[position].nombre)
 
-//        Glide
-//            .with(context)
-//            .load("https://firebasestorage.googleapis.com/v0/b/firestoreexample-ec489.appspot.com/o/Fotos%2FGUERNICA.jpg?alt=media&token=001a8ffc-96c2-4aeb-9120-8d5099b3fa1c")
+        Glide
+            .with(context)
+            .load("https://firebasestorage.googleapis.com/v0/b/firestoreexample-ec489.appspot.com/o/Fotos%2FGUERNICA.jpg?alt=media&token=001a8ffc-96c2-4aeb-9120-8d5099b3fa1c")
+            .centerInside()
+            .into(holder.getImageView());
 //
-//            .centerInside()
-//            .into(holder.getImageView());
-//
-            holder.getCardLayout().setOnLongClickListener() {
-                onItemClick(position)
-            }
+            holder.getCardLayout().setOnClickListener  () {
 
-            holder.getButton().setOnClickListener {
-
+               onItemClick(position)
             }
 
     }
@@ -79,15 +79,11 @@ class MascotaListAdapter(
         fun getCardLayout ():CardView{
             return view.findViewById(R.id.card_package_item)
         }
-
-        fun getButton (): Button {
-            return view.findViewById(R.id.btn_item)
-        }
-
 //
-//        fun getImageView () : ImageView {
-//            return view.findViewById(R.id.img_item)
-//        }
+//
+        fun getImageView () : ImageView {
+            return view.findViewById(R.id.img_item)
+        }
 
     }
 }

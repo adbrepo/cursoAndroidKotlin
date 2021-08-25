@@ -31,21 +31,10 @@ class MainActivity : AppCompatActivity() {
         btnAccept = findViewById(R.id.btn_accept)
         rootLayout = findViewById(R.id.root_layout)
 
-
-//
-//         if(edtInput.text.toString().equals(text)){
-//
-//         }
-//        else{
-//
-//        }
-
         btnAccept.setOnClickListener {
-
             if (edtInput.length()>0 ) {
-                txtCartel.text = "Texto ingresado: " + edtInput
+                txtCartel.text = "Texto ingresado: " + edtInput.text
             }
-
             else{
                 Snackbar.make(rootLayout, "Campo de datos vacio", Snackbar.LENGTH_SHORT).show()
             }

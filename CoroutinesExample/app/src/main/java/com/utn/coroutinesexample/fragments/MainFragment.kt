@@ -42,12 +42,14 @@ class MainFragment : Fragment() {
         val parentJob = Job()
         val scope = CoroutineScope(Dispatchers.Default + parentJob)
 
+
         scope.launch {
             task1()
             task2()
             task3()
         }
-//        task4()
+
+        task4()
 
         scope.launch {
             val one = async { fetchDataFromServerOne() }

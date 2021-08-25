@@ -46,19 +46,24 @@ class fragment1 : Fragment() {
         // TODO: Use the ViewModel
 
 
-        viewModel.name.observe(viewLifecycleOwner, Observer { result ->
 
-            txtCartel.text = result.toString()
-        })
     }
+
+
 
 
     override fun onStart() {
         super.onStart()
 
+        viewModel.name.observe(viewLifecycleOwner, Observer { result ->
+
+            txtCartel.text = result.toString()
+        })
+
         btnChange.setOnClickListener {
 
             viewModel.changeName()
+
         }
     }
 }

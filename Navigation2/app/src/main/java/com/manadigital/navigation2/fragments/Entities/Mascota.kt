@@ -3,7 +3,7 @@ package com.manadigital.kotlinclasses.Entities
 import android.os.Parcel
 import android.os.Parcelable
 
-class Mascota(nombre: String, tipo: String, raza: String, edad: Int) : Parcelable {
+class Mascota(nombre: String, tipo: String, raza: String, edad: Int)  {
     var nombre: String
 
     var tipo: String
@@ -33,27 +33,5 @@ class Mascota(nombre: String, tipo: String, raza: String, edad: Int) : Parcelabl
         return edadnueva
     }
 
-    constructor(source: Parcel) : this(
-        source.readString()!!,
-        source.readString()!!,
-        source.readString()!!,
-        source.readInt()
-    )
 
-    override fun describeContents() = 0
-
-    override fun writeToParcel(dest: Parcel, flags: Int) = with(dest) {
-        writeString(nombre)
-        writeString(tipo)
-        writeString(raza)
-        writeInt(edad)
-    }
-
-    companion object {
-        @JvmField
-        val CREATOR: Parcelable.Creator<Mascota> = object : Parcelable.Creator<Mascota> {
-            override fun createFromParcel(source: Parcel): Mascota = Mascota(source)
-            override fun newArray(size: Int): Array<Mascota?> = arrayOfNulls(size)
-        }
-    }
 }

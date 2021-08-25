@@ -23,9 +23,10 @@ class listFragment : Fragment() {
     lateinit var recMascotas : RecyclerView
     private lateinit var linearLayoutManager: LinearLayoutManager
 
+    private lateinit var mascotasListAdapter: MascotaListAdapter
 
     var mascotas : MutableList<Mascota> = ArrayList<Mascota>()
-    private lateinit var mascotasListAdapter: MascotaListAdapter
+
 
     companion object {
         fun newInstance() = listFragment()
@@ -59,19 +60,20 @@ class listFragment : Fragment() {
         linearLayoutManager = LinearLayoutManager(context)
         recMascotas.layoutManager = linearLayoutManager
 
-        mascotasListAdapter = MascotaListAdapter(mascotas) { x ->
-            onItemClick(x)
+        mascotasListAdapter = MascotaListAdapter(mascotas,requireContext()){ pos->
+            onItemClick(pos)
+
+
         }
 
-      //  mascotasListAdapter = MascotaListAdapter(mascotas)
+//        mascotasListAdapter = MascotaListAdapter(mascotas)
 
         recMascotas.adapter = mascotasListAdapter
 
     }
 
-     fun onItemClick ( position : Int ) : Boolean {
+     fun onItemClick ( position : Int )  {
         Snackbar.make(v,position.toString(),Snackbar.LENGTH_SHORT).show()
-         return true
     }
 
 

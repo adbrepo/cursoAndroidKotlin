@@ -50,8 +50,8 @@ class MainFragment : Fragment() {
 
     override fun onStart() {
         super.onStart()
-        val prefs = PreferenceManager.getDefaultSharedPreferences(requireContext())
 
+        val prefs = PreferenceManager.getDefaultSharedPreferences(requireContext())
 
         Log.d("Test",prefs.getBoolean("sync",false).toString())
         Log.d("Test",prefs.getString("reply",""))
