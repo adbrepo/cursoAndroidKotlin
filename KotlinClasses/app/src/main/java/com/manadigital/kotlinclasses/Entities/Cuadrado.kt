@@ -1,10 +1,8 @@
 package com.manadigital.kotlinclasses.Entities
 
-class Cuadrado (var lado : Double) : Figura {
+class Cuadrado (var lado : Double, nombre: String, perimetro: Double, superficie: Double) :
+    Figura(nombre, perimetro, superficie) {
 
-    init {
-        super.
-    }
     override fun calcularPerimetro(): Double {
         TODO("Not yet implemented")
     }

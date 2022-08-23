@@ -14,7 +14,6 @@ class MainActivity : AppCompatActivity() {
     var mascotas: MutableList<Mascota> = mutableListOf()
 
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -32,7 +31,7 @@ class MainActivity : AppCompatActivity() {
 
         Log.d("TEST",edadCalculada.toString())
 
-        var mascota1 = Mascota("Pedro",Mascota.Constants.typePerro,"Colie",3)
+        val mascota1 = Mascota("Pedro",Mascota.Constants.typePerro,"Colie",3)
 
         mascotas.add(mascota1)
 
@@ -43,13 +42,12 @@ class MainActivity : AppCompatActivity() {
         mascotas.add(Mascota("Carlos",Mascota.Constants.typeGato,"Pardo",7))
         mascotas.add(Mascota("David",Mascota.Constants.typeGato,"Arlequin",8))
 //
-         val mascota = Mascota("David",Mascota.Constants.typeGato,"Arlequin",8)
+        val mascota = Mascota("David",Mascota.Constants.typeGato,"Arlequin",8)
 
         Log.d("TEST",mascota.toString())
 
 
-        for (mascotaActual in mascotas){
-
+        for (mascotaActual in mascotas) {
             Log.d("TEST",mascotaActual.nombre+" " + mascotaActual.tipo +" " + mascotaActual.raza+ " " +mascotaActual.edad+ "\n")
         }
 
@@ -61,6 +59,5 @@ class MainActivity : AppCompatActivity() {
 
         Log.d("TEST",mascotas[0].nombre)
 
-    }
     }
 }
