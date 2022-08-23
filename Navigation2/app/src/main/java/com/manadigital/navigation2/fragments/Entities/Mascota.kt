@@ -1,29 +1,16 @@
-package com.manadigital.kotlinclasses.Entities
+package com.manadigital.navigation2.fragments.Entities
 
-import android.os.Parcel
 import android.os.Parcelable
+import kotlinx.android.parcel.Parcelize
 
-class Mascota(nombre: String, tipo: String, raza: String, edad: Int)  {
-    var nombre: String
-
-    var tipo: String
-
-    var raza: String
-
-    var edad: Int
+@Parcelize
+class Mascota(var nombre: String, var tipo: String, var raza: String, var edad: Int) : Parcelable {
 
     class Constants {
         companion object {
             val typeGato = "GATO"
             val typePerro = "PERRO"
         }
-    }
-
-    init {
-        this.nombre = nombre
-        this.tipo = tipo
-        this.raza = raza
-        this.edad = edad
     }
 
     fun CalcularEdad(edad: Int): Int {

@@ -8,7 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.google.android.material.snackbar.Snackbar
-import com.manadigital.kotlinclasses.Entities.Mascota
+import com.manadigital.navigation2.fragments.Entities.Mascota
 
 import com.manadigital.navigation2.R
 import com.manadigital.navigation2.fragments.Entities.User
@@ -25,7 +25,7 @@ class Fragment2 : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         // Inflate the layout for this fragment
         v=  inflater.inflate(R.layout.fragment_fragment2, container, false)
         return v
@@ -34,24 +34,18 @@ class Fragment2 : Fragment() {
     override fun onStart() {
         super.onStart()
 
-        var mascotaName  = Fragment2Args.fromBundle(requireArguments()).mascotaName
+        val mascotaName = Fragment2Args.fromBundle(requireArguments()).mascotaName
         var cantidad = Fragment2Args.fromBundle(requireArguments()).cantidad
         mascotas = Fragment2Args.fromBundle(requireArguments()).listaMascotas.toMutableList()
         user = Fragment2Args.fromBundle(requireArguments()).user
 
-
-
         Snackbar.make(v,mascotaName,Snackbar.LENGTH_SHORT).show()
 
-
-
-
-        for (mascotaActual in mascotas){
-
-            Log.d("Test",mascotaActual.nombre+" " + mascotaActual.tipo +" " + mascotaActual.raza+ " "
-                    +mascotaActual.edad+ "\n")
+        for (mascotaActual in mascotas) {
+            Log.d("Test",mascotaActual.nombre+" " +
+                    mascotaActual.tipo +" " +
+                    mascotaActual.raza+ " " +
+                    mascotaActual.edad+ "\n")
         }
-
-
     }
 }

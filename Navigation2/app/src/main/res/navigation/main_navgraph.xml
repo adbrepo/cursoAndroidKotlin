@@ -27,7 +27,7 @@
             app:argType="integer" />
         <argument
             android:name="listaMascotas"
-            app:argType="com.manadigital.kotlinclasses.Entities.Mascota[]" />
+            app:argType="com.manadigital.navigation2.fragments.Entities.Mascota[]" />
         <argument
             android:name="user"
             app:argType="com.manadigital.navigation2.fragments.Entities.User" />
