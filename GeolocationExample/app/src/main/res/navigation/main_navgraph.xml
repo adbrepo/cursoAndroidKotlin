@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_navgraph"
+    app:startDestination="@id/myMapFragment">
+
+    <fragment
+        android:id="@+id/myMapFragment"
+        android:name="com.manadigital.geolocationexample.MyMapFragment"
+        android:label="fragment_my_map"
+        tools:layout="@layout/fragment_my_map" />
+</navigation>

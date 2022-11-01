@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">GeolocationExample</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="places_api_key">AIzaSyBk4Mnc1thqqQnegYqVlxkGjH4o79De_Z4</string>
+</resources>

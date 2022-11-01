@@ -1,0 +1,69 @@
+{
+  "project_info": {
+    "project_number": "1056749972742",
+    "firebase_url": "https://testapp-245bd.firebaseio.com",
+    "project_id": "testapp-245bd",
+    "storage_bucket": "testapp-245bd.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1056749972742:android:7c695dd03aa36730ff4287",
+        "android_client_info": {
+          "package_name": "com.manadigital.barcodeexample"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1056749972742-rll01v2dm6oi70ni98nmd0smto13d574.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBk4Mnc1thqqQnegYqVlxkGjH4o79De_Z4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1056749972742-rll01v2dm6oi70ni98nmd0smto13d574.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1056749972742:android:553805cf69827879ff4287",
+        "android_client_info": {
+          "package_name": "com.manadigital.geolocationexample"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1056749972742-rll01v2dm6oi70ni98nmd0smto13d574.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBk4Mnc1thqqQnegYqVlxkGjH4o79De_Z4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1056749972742-rll01v2dm6oi70ni98nmd0smto13d574.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
