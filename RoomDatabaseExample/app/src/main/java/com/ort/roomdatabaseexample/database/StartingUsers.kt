@@ -22,11 +22,31 @@ class StartingUsers(private val context: Context) : RoomDatabase.Callback() {
         }
     }
 
+    /**
+     * Pre-populate database with hard-coded users
+     */
     private fun fillWithStartingUsers(context: Context) {
+        val users = listOf(
+            User(0, "John", "john@gmail.com"),
+            User(0, "Jane", "jane@gmail.com"),
+            User(0, "Matt", "matt@gmail.com"),
+            User(0, "Jeff", "jeff@gmail.com")
+        )
+        val dao = AppDatabase.getInstance(context)?.userDao()
+
+        users.forEach {
+            dao?.insertUser(it)
+        }
+    }
+
+    /**
+     * Pre-populate database with users from a Json file
+     */
+    private fun fillWithStartingUsersFromJson(context: Context) {
         val dao = AppDatabase.getInstance(context)?.userDao()
 
         try {
-            val users = loadJSONArray(context)
+            val users = loadJSONArray(context, R.raw.users)
             for (i in 0 until users.length()) {
                 val item = users.getJSONObject(i)
                 val user = User(
@@ -42,8 +62,11 @@ class StartingUsers(private val context: Context) : RoomDatabase.Callback() {
         }
     }
 
-    private fun loadJSONArray(context: Context): JSONArray {
-        val inputStream = context.resources.openRawResource(R.raw.users)
+    /**
+     * Utility to load a JSON array from the raw folder
+     */
+    private fun loadJSONArray(context: Context, file: Int): JSONArray {
+        val inputStream = context.resources.openRawResource(file)
 
         BufferedReader(inputStream.reader()).use {
             return JSONArray(it.readText())
