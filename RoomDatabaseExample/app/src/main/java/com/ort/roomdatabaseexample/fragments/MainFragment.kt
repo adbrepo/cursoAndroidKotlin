@@ -56,6 +56,9 @@ class MainFragment : Fragment() {
         db = AppDatabase.getInstance(v.context)
         userDao = db?.userDao()
 
+        // Dummy call to pre-populate db
+        userDao?.loadAllPersons()
+
         btnAdd.setOnClickListener {
             userDao?.insertPerson(User(0, edtName.text.toString(), edtEmail.text.toString()))
         }
