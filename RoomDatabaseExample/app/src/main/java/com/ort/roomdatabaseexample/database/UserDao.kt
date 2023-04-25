@@ -7,17 +7,17 @@ import com.ort.roomdatabaseexample.entities.User
 interface UserDao {
 
     @Query("SELECT * FROM users ORDER BY id")
-    fun loadAllPersons(): MutableList<User?>?
-
-    @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun insertPerson(user: User?)
-
-    @Update
-    fun updatePerson(user: User?)
-
-    @Delete
-    fun delete(user: User?)
+    fun fetchAllUsers(): MutableList<User?>?
 
     @Query("SELECT * FROM users WHERE id = :id")
-    fun loadPersonById(id: Int): User?
+    fun fetchUserById(id: Int): User?
+
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    fun insertUser(user: User)
+
+    @Update
+    fun updateUser(user: User)
+
+    @Delete
+    fun delete(user: User)
 }

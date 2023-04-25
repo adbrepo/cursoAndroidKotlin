@@ -57,24 +57,24 @@ class MainFragment : Fragment() {
         userDao = db?.userDao()
 
         // Dummy call to pre-populate db
-        userDao?.loadAllPersons()
+        userDao?.fetchAllUsers()
 
         btnAdd.setOnClickListener {
-            userDao?.insertPerson(User(0, edtName.text.toString(), edtEmail.text.toString()))
+            userDao?.insertUser(User(0, edtName.text.toString(), edtEmail.text.toString()))
         }
 
         btnDelete.setOnClickListener {
-            userDao?.delete(User(0, "", ""))
+            userDao?.delete(User(1, "", ""))
         }
 
         btnEdit.setOnClickListener {
-            userDao?.updatePerson(User(0, "Juan", "juan@utn.com"))
+            userDao?.updateUser(User(1, "Juan", "juan@utn.com"))
         }
 
         btnSearch.setOnClickListener {
-            Log.d("Test", userDao?.loadPersonById(0)?.name.toString())
+            Log.d("Test", userDao?.fetchUserById(1)?.name.toString())
 
-            userList = userDao?.loadAllPersons() as MutableList<User>
+            userList = userDao?.fetchAllUsers() as MutableList<User>
 
             for (actualUser in userList) {
                 Log.d("Test", actualUser.name)

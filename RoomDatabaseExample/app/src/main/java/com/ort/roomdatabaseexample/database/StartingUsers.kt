@@ -35,7 +35,7 @@ class StartingUsers(private val context: Context) : RoomDatabase.Callback() {
                     email = item.getString("email")
                 )
 
-                dao?.insertPerson(user)
+                dao?.insertUser(user)
             }
         } catch (e: JSONException) {
             Log.e("fillWithStartingNotes", e.toString())
