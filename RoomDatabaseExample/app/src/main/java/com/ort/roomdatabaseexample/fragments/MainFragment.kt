@@ -56,6 +56,7 @@ class MainFragment : Fragment() {
         db = AppDatabase.getInstance(v.context)
         userDao = db?.userDao()
 
+
         // Dummy call to pre-populate db
         userDao?.fetchAllUsers()
 

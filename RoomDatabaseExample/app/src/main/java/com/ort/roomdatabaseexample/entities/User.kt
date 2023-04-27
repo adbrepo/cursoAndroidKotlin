@@ -18,6 +18,7 @@ class User(id: Int, name: String, email: String) {
     @ColumnInfo(name = "email")
     var email: String
 
+
     init {
         this.id = id
         this.name = name

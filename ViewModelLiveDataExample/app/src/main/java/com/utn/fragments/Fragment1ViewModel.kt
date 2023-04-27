@@ -8,6 +8,8 @@ class Fragment1ViewModel : ViewModel() {
 
     val name = MutableLiveData<String>()
 
+    var viewState : MutableLiveData<String> = MutableLiveData()
+
     lateinit var texto : String
 
     fun changeName (){
@@ -16,6 +18,13 @@ class Fragment1ViewModel : ViewModel() {
 
     fun changeText (text : String){
         texto = text
+    }
+
+    fun submitForm(){
+        viewState.value = "loading"
+        val result  =  validarFormulario()
+        viewState.value = "idle"
+
     }
 
 

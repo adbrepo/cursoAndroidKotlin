@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
+import androidx.fragment.app.viewModels
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
@@ -44,26 +45,40 @@ class fragment1 : Fragment() {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProvider(requireActivity()).get(Fragment1ViewModel::class.java)
         // TODO: Use the ViewModel
-
-
-
     }
-
-
-
 
     override fun onStart() {
         super.onStart()
 
-        viewModel.name.observe(viewLifecycleOwner, Observer { result ->
+        btnChange.setOnClickListener {
+            txtCartel.text = "pepe"
+        }
 
+
+        viewModel.name.observe(viewLifecycleOwner, Observer { result ->
             txtCartel.text = result.toString()
+        })
+
+        viewModel.viewState.observe(viewLifecycleOwner, Observer { result ->
+            when(result){
+                "loading" -> {
+                    txtCartel.text = "pepe"
+                }
+                "editing" -> {
+                    txtCartel.text = "juan"
+                }
+                "idle" -> {
+                    txtCartel.text = "luis"
+                }
+            }
         })
 
         btnChange.setOnClickListener {
 
-            viewModel.changeName()
+            viewModel.submirForm()
 
         }
+
     }
+
 }
