@@ -38,14 +38,16 @@ class MainFragment : Fragment() {
     ): View {
         v = inflater.inflate(R.layout.fragment_main, container, false)
 
-        edtName = v.findViewById(R.id.edt_name)
-        edtEmail = v.findViewById(R.id.edt_email)
+        with(v) {
+            edtName = findViewById(R.id.edt_name)
+            edtEmail = findViewById(R.id.edt_email)
 
-        btnAdd = v.findViewById(R.id.btn_add)
-        btnDelete = v.findViewById(R.id.btn_delete)
-        btnEdit = v.findViewById(R.id.btn_editar)
-        btnSearch = v.findViewById(R.id.btn_search)
-        btnDebug = v.findViewById(R.id.btn_debug)
+            btnAdd = findViewById(R.id.btn_add)
+            btnDelete = findViewById(R.id.btn_delete)
+            btnEdit = findViewById(R.id.btn_editar)
+            btnSearch = findViewById(R.id.btn_search)
+            btnDebug = findViewById(R.id.btn_debug)
+        }
 
         return v
     }

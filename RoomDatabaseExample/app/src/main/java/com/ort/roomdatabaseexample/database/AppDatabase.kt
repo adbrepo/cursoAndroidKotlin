@@ -14,8 +14,6 @@ abstract class AppDatabase : RoomDatabase() {
 
     abstract fun userDao(): UserDao
 
-
-
     companion object {
         private var INSTANCE: AppDatabase? = null
 
