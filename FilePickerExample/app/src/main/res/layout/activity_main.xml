@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/txtFilePath"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Pick your file"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnPickImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Pick image"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toStartOf="@id/txtFilePath"
+        app:layout_constraintEnd_toEndOf="@id/txtFilePath"
+        app:layout_constraintTop_toBottomOf="@id/txtFilePath"/>
+
+    <Button
+        android:id="@+id/btnPickFile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Pick file"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toStartOf="@id/txtFilePath"
+        app:layout_constraintEnd_toEndOf="@id/txtFilePath"
+        app:layout_constraintTop_toBottomOf="@id/btnPickImage"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
