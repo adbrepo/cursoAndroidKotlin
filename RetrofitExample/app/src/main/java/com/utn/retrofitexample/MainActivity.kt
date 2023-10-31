@@ -5,7 +5,7 @@ import android.os.Bundle
 import android.util.Log
 import androidx.lifecycle.lifecycleScope
 import com.utn.retrofitexample.domain.repository.PostsRepository
-import com.utn.retrofitexample.domain.repository.PostsRepositoryImpl
+import com.utn.retrofitexample.data.PostsRepositoryImpl
 import kotlinx.coroutines.launch
 
 class MainActivity : AppCompatActivity() {

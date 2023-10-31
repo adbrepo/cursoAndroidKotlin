@@ -1,12 +1,12 @@
-package com.utn.retrofitexample.domain.repository
+package com.utn.retrofitexample.data
 
 import android.util.Log
-import com.utn.retrofitexample.data.PostsApiService
 import com.utn.retrofitexample.domain.model.Comment
 import com.utn.retrofitexample.domain.model.Post
 import com.utn.retrofitexample.data.entity.PostResponse
 import com.utn.retrofitexample.data.entity.toComment
 import com.utn.retrofitexample.data.entity.toPost
+import com.utn.retrofitexample.domain.repository.PostsRepository
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
